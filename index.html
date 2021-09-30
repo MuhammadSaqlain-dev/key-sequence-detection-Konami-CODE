@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eastern Eggs || Konami Code</title>
+    <script
+      type="text/javascript"
+      src="https://www.cornify.com/js/cornify.js"
+    ></script>
+    <style>
+      body {
+        padding: 50px;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is Konami Code | -</h1>
+    <h1>
+      Write '<u style="background-color: #99ffbb">saqlain</u>' again and Again
+      to see magic!
+    </h1>
+
+    <script>
+      const secretKey = "saqlain";
+      let pressedKeys = [];
+
+      function callKonami(e) {
+        pressedKeys.push(e.key);
+
+        pressedKeys.splice(
+          -secretKey.length - 1,
+          pressedKeys.length - secretKey.length
+        );
+
+        console.log(pressedKeys);
+
+        if (pressedKeys.join("").includes(secretKey)) {
+          console.log("DING DING");
+          cornify_add();
+        }
+      }
+
+      window.addEventListener("keyup", callKonami);
+    </script>
+  </body>
+</html>
